@@ -27,3 +27,95 @@ else
     #else print this
     echo "Weblogic has stopped"
 fi
+..................................................................................
+
+ps -ef |grep weblogic | awk '{print $2}' > /dev/null
+
+if [ "$?" -eq 0 ]; then
+
+    #If they are equal then print this
+
+    echo "Weblogic is running"
+
+else
+
+    #else print this
+
+    echo "Weblogic has stopped"
+
+    echo "warning" at 'date +%Y_%m_%d_%H:%M:%S' 
+
+    printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1 
+
+    
+
+fi
+
+..............
+
+#Initializing two variables
+
+var=$(ps -ef |grep weblogic | awk '{print $2}')
+
+#var=no
+
+echo boom boom $var
+
+if [ ps -ef |grep weblogic | awk '{print $2}' > /dev/null ]
+
+then
+
+    #If they are equal then print this
+
+    echo "Weblogic is running"
+
+else
+
+    #else print this
+
+    echo "Weblogic has stopped"
+
+    echo "warning" at 'date +%Y_%m_%d_%H:%M:%S' 
+
+    printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1 
+
+    
+
+fi
+
+..................................
+
+#Initializing two variables
+
+#var=$(ps -ef |grep weblogic | awk '{print $2}')
+
+var=0
+
+echo boom boom $var
+
+if [ $var > 0 ]
+
+then
+
+    #If they are equal then print this
+
+    echo "Weblogic is running"
+
+else
+
+    #else print this
+
+    echo "Weblogic has stopped"
+
+    echo "warning" at 'date +%Y_%m_%d_%H:%M:%S' 
+
+    printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1 
+
+    
+
+fi
+
+................................
+
+https://stackoverflow.com/questions/3043978/how-to-check-if-a-process-id-pid-exists
+
