@@ -119,3 +119,24 @@ fi
 
 https://stackoverflow.com/questions/3043978/how-to-check-if-a-process-id-pid-exists
 
+semi Final:
+
+pid=$(ps -ef |grep weblogic | awk '{print $2}') 
+
+ps -ef |grep weblogic | awk '{print $2}' > /dev/null
+
+if [ "$?" -eq 0 ]; then
+
+    echo "Weblogic is running {process id: $pid}"
+
+else
+
+    echo "Weblogic has stopped $pid"
+
+    echo -e "Warning: Weblogic has stopped" on `hostname -i` | mutt -s "Weblogic has stopped :" at `date +%Y_%m_%d_%H:%M:%S` dipanjanroy369@gmail.com" 
+
+fi
+
+
+
+
